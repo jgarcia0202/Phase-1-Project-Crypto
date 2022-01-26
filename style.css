@@ -9,3 +9,6 @@ h1 {
 body {
     background: #101C26;
 }
+header > h2 {
+    color: white;
+}
