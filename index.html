@@ -18,8 +18,9 @@
     async function getTime() {
       const response = await fetch(timeUrl);
       const data = await response.json();
-      console.log(data.currentDateTime);
-      console.log(data.dayOfTheWeek);
+      const { currentDateTime, dayOfTheWeek} = data;
+      console.log(currentDateTime);
+      console.log(dayOfTheWeek);
       // timeZoneName: "Eastern Standard Time"
 
 
