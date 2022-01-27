@@ -14,15 +14,19 @@
       dayOfTheWeek: <span id = 'day'></span><br />
       currentDateTime: <span id = 'time'></span>
     </p>
-
+    <p2>
+      symbol: <span id = 'sym'></span>
+    </p2>
     <script>
-    const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=12';
+    const cryptoUrl = 'https://data.messari.io/api/v1/assets?fields=id,slug,symbol,metrics/market_data/price_usd';
     const timeUrl = 'http://worldclockapi.com/api/json/est/now'
 
     async function getCryto() {
       const response = await fetch(cryptoUrl);
-      const data = await response.json();
-      console.log(data);
+      const dat = await response.json();
+      const {symbol,name,rank,price_usd} = dat.data;
+      console.log(dat.data);
+      document.getElementById('sym').textContent = symbol;
     }
 
     async function getTime() {
