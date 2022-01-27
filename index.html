@@ -8,14 +8,14 @@
     <title>Crypto Finder</title>
   </head>
   <body>
-    <h1>|Welcome to the current Crypto Info!|</h1>
+    <h1>|Welcome to BITCOIN WATCHER!|</h1>
 
     <p>
       dayOfTheWeek: <span id = 'day'></span><br />
       currentDateTime: <span id = 'time'></span>
     </p>
     <p2>
-      symbol: <span id = 'sym'></span>
+      symbol: <span id = 'cry'></span>
     </p2>
     <script>
     const cryptoUrl = 'https://data.messari.io/api/v1/assets?fields=id,slug,symbol,metrics/market_data/price_usd';
@@ -24,9 +24,11 @@
     async function getCryto() {
       const response = await fetch(cryptoUrl);
       const dat = await response.json();
-      const {symbol,name,rank,price_usd} = dat.data;
-      console.log(dat.data);
-      document.getElementById('sym').textContent = symbol;
+      console.log(dat.data[0].symbol);
+      console.log(dat.data[1].slug);
+      console.log(dat.data[2].metrics.market_data.price_usd);
+      console.log(dat.data[0,1,2,3,4,5,6].symbol);
+
     }
 
     async function getTime() {
