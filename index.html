@@ -18,16 +18,13 @@
       symbol: <span id = 'cry'></span>
     </p2>
     <script>
-    const cryptoUrl = 'https://data.messari.io/api/v1/assets?fields=id,slug,symbol,metrics/market_data/price_usd';
+    const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=1';
     const timeUrl = 'http://worldclockapi.com/api/json/est/now'
 
     async function getCryto() {
       const response = await fetch(cryptoUrl);
       const dat = await response.json();
-      console.log(dat.data[0].symbol);
-      console.log(dat.data[1].slug);
-      console.log(dat.data[2].metrics.market_data.price_usd);
-      console.log(dat.data[0,1,2,3,4,5,6].symbol);
+      console.log(dat.data[0]);
 
     }
 
