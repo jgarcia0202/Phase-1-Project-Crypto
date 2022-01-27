@@ -15,7 +15,9 @@
       currentDateTime: <span id = 'time'></span>
     </p>
     <p2>
-      symbol: <span id = 'cry'></span>
+      price in usd: <span id = 'usd'></span><br />
+      market cap: <span id = 'cap'></span><br />
+      change: <span id = 'chg'></span>
     </p2>
     <script>
     const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=1';
@@ -24,8 +26,16 @@
     async function getCryto() {
       const response = await fetch(cryptoUrl);
       const dat = await response.json();
-      console.log(dat.data[0]);
+      const priceUSD = dat.data[0].price_usd;
+      const changeUSD = dat.data[0].percent_change_24h;
+      const capUSD = dat.data[0].market_cap_usd;
+      console.log(dat.data[0].price_usd);
+      console.log(dat.data[0].percent_change_24h);
+      console.log(dat.data[0].market_cap_usd);
 
+      document.getElementById('usd').textContent = priceUSD;
+      document.getElementById('cap').textContent = changeUSD;
+      document.getElementById('chg').textContent = capUSD;
     }
 
     async function getTime() {
