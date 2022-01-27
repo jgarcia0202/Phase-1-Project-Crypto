@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" />
     <title>Crypto Finder</title>
   </head>
   <body>
-    <h1>|Welcome to the Crypto Info!|</h1>
+    <h1>|Welcome to the current Crypto Info!|</h1>
+
+    <p>
+      dayOfTheWeek: <span id = 'day'></span><br />
+      currentDateTime: <span id = 'time'></span>
+    </p>
+
     <script>
-    const cryptoUrl = 'https://api.coinlore.net/api/tickers/';
+    const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=12';
     const timeUrl = 'http://worldclockapi.com/api/json/est/now'
 
     async function getCryto() {
@@ -15,6 +24,7 @@
       const data = await response.json();
       console.log(data);
     }
+
     async function getTime() {
       const response = await fetch(timeUrl);
       const data = await response.json();
@@ -22,9 +32,10 @@
       console.log(currentDateTime);
       console.log(dayOfTheWeek);
       // timeZoneName: "Eastern Standard Time"
-
-
+      document.getElementById('day').textContent = dayOfTheWeek;
+      document.getElementById('time').textContent = currentDateTime;
     }
+
 
     getCryto();
     getTime();
