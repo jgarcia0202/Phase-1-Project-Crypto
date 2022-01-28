@@ -12,7 +12,6 @@
     <h2>BITCOIN(BTC):</h2>
     
     <p3 id="text">This will give you information on the current Bitcoin status__|</p3>
-    <script type="text/javascript" src="index.js"></script>
 
     <p>
       dayOfTheWeek: <span id = 'day'></span><br />
@@ -23,6 +22,13 @@
       market cap: <span id = 'cap'></span><br />
       change: <span id = 'chg'></span>
     </p2>
+
+    <footer>
+      <ul>
+        <li class="like">Bullish!! <span class="like-glyph">&#x21E7;</span>     Bearish!<span class='like-glyph'>&#x21E9;</span></li>
+      </ul>
+    </footer>
+    
     <script>
     const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=1';
     const timeUrl = 'http://worldclockapi.com/api/json/est/now'
