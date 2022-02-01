@@ -1,6 +1,9 @@
-let text = document.getElementById('text');
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("The DOM has loaded");
-    text.textContent = "This comes last";
-  });
 
+  function addingEventListener() {
+    const input = document.getElementById('input');
+    function clickAlert() {
+    alert('I was clicked!');
+}
+
+input.addEventListener('click', clickAlert); 
+}
