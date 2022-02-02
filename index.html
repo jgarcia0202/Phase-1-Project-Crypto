@@ -25,8 +25,11 @@
      </p2>
      <footer>
        <ul>
-         <p id ="button">Bullish!! <span >&#x21E7;</span></p>
-         <p id ="button">Bearish!<span >&#x21E9;</span></p>
+        <p>How is the cryto market looking?</p>
+         <button onclick = "function1()">Bullish!! <span >&#x21E7;</span></button>
+         <button onclick = "function2()">Bearish!<span >&#x21E9;</span></button>
+         <p id="system"></p>
+
        </ul>
      </footer>
     </div>
@@ -34,6 +37,12 @@
     const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=1';
     const timeUrl = 'http://worldclockapi.com/api/json/est/now'
 
+    function function1() {
+        document.getElementById("system").innerHTML = "You have voted...</br> It seems that you believe that the crypto market is looking Bullish! That means that the market is going up!!!";
+      }
+      function function2() {
+        document.getElementById("system").innerHTML = "You have voted...</br> It seems that you believe that the crypto market is looking Bearish! That means that the market is going down!!!";
+      }
     async function getCryto() {
       const response = await fetch(cryptoUrl);
       const dat = await response.json();
