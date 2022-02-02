@@ -1,17 +1,25 @@
 div {
-    width: 650px;
+    width: 1150px;
     position: absolute;
     top: 15%;
     text-align: center;
     border: 15px solid black;
     padding: 50px;
     margin: 20px;
+    height: 200px;
   }
   h1 {
       text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      
   }
   body > div > h2 {
       position: absolute;
-      top: 25%;
-      border-right: 5px;
+      top: 10%;
   }
+  body > div > p3 {
+    position: static;
+    top: 10px;
+    text-align: left;
+    font-family: Papyrus, fantasy;
+}
