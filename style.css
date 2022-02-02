@@ -1,0 +1,12 @@
+div {
+    width: 650px;
+    position: absolute;
+    top: 15%;
+    text-align: center;
+    border: 15px solid black;
+    padding: 50px;
+    margin: 20px;
+  }
+  h1 {
+      text-align: center;
+  }
