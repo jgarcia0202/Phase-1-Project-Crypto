@@ -10,3 +10,8 @@ div {
   h1 {
       text-align: center;
   }
+  body > div > h2 {
+      position: absolute;
+      top: 25%;
+      border-right: 5px;
+  }
