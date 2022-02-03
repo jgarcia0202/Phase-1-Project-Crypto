@@ -6,19 +6,21 @@ div {
     position: absolute;
     top: 15%;
     text-align: center;
-    border: 15px solid black;
-    padding: 50px;
+    border: 5px solid #011C40;
+    padding: 30px;
     margin: 20px;
   }
   h1 {
       text-align: center;
       font-family: 'Courier New', Courier, monospace;
+      color:white;
       
   }
   body > div > h2 {
       position: absolute;
       top: 10%;
       font-size: xx-large;
+      color: white;
   }
   body > div > p3 {
     position: static;
@@ -26,10 +28,11 @@ div {
     text-align: left,top;
     font-family: Papyrus, fantasy;
     font-size: x-large;
+    color: white;
 }
 button {
     display: inline-block;
-    background-color: #7b38d8;
+    background-color: #4F8C6F;
     border-radius: 10px;
     border: 4px double #cccccc;
     color: #eeeeee;
@@ -45,7 +48,7 @@ button {
     margin: 5px;
   }
   button:hover {
-    background-color: green;
+    background-color: #A66946;
   }
   button span {
     cursor: pointer;
@@ -67,4 +70,13 @@ button {
   button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+  p {
+      color: white;
+  }
+  p2{
+      color: white;
+  }
+  label{
+      color: white;
   }
