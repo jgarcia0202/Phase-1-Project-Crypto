@@ -1,2 +1,2 @@
 # Phase-1-Project-Crypto
-Project consists on user looking at crypto and adding them to a watch list and like
+Project gives the user the current and up to date information on the cryptocurrency Bitcoin. The data that is given is the current time and date, the price of bitcoin, the market cap, and the change in crypto. The user is able to hover over the green buttons named bullish and bearish which means the market goes up or down. After the button  is hovered over, the button changes colors to orange. After being pressed, a text appears telling them what they just pressed. Then in the end the user is given a text prompt to reply to.
