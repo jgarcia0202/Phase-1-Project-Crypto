@@ -16,7 +16,7 @@
 
      <p>
       Day of the Week: <span id = 'day'></span><br />
-      Current Time: <span id = 'time'></span>
+      Current Time(Eastern Time): <span id = 'time'></span>
      </p>
      <p2>
       Price in USD: <span id = 'usd'></span><br />
@@ -29,6 +29,13 @@
          <button onclick = "function1()">Bullish!! <span >&#x21E7;</span></button>
          <button onclick = "function2()">Bearish!<span >&#x21E9;</span></button>
          <p id="system"></p>
+         <form action="/form/submit" method="post">
+          <label for="text">Explain why you think the market is going that way:</label>
+          <br>
+          <textarea id="text" name="text" rows="3" cols="50"></textarea>
+          <br/>
+          <input type="submit" value="Submit">
+        </form>
 
        </ul>
      </footer>
