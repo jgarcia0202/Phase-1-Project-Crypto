@@ -1,4 +1,15 @@
 const myBtn = document.getElementById("myBtn");
+myBtn.addEventListener("click", function(e){
+  const reason = prompt("Why do you think so?");
+  alert("You believe the market is bullish because: "+ reason+ ".");
+});
+
+const myBtn2 = document.getElementById("myBtn2");
+myBtn2.addEventListener("click", function(e){
+  const reason = prompt("Why do you think so?");
+  alert("You believe the market is bearish because: "+ reason+ ".");
+});
+
 
 //Below is urls
 const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=1';
@@ -10,7 +21,7 @@ function function1() {
   }
   function function2() {
     document.getElementById("system").innerHTML = "You have voted...</br> It seems that you believe that the crypto market is looking Bearish! That means that the market is going down!!!";
-  }
+    }
   //below is the api data gathering
 async function getCryto() {
   const response = await fetch(cryptoUrl);
