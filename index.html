@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Crypto Finder</title>
   </head>
   <body>
@@ -23,20 +25,15 @@
       Market Cap: <span id = 'chg'></span> <br />
       Change %: <span id = 'cap'></span>
      </p2>
+     
      <footer>
        <ul>
-        <p>How is the cryto market looking?</p>
+        <p>How is the cryto market looking? 
+          <i id ="thumb" class="fa fa-thumbs-up"></i>
+        </p>
+        
         <button id = "myBtn" type = "button">Bullish! <span >&#x21E7;</span></button>
         <button id = "myBtn2" type = "button">Bearish!<span >&#x21E9;</span></button>
-         <p id="system"></p>
-         <form action="/form/submit" method="post">
-          <label for="text">Explain why you think the market is going that way:</label>
-          <br>
-          <textarea id="text" name="text" rows="3" cols="50"></textarea>
-          <br/>
-          <input type="submit" value="Submit">
-        </form>
-
        </ul>
      </footer>
     </div>

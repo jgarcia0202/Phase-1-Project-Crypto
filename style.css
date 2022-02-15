@@ -1,5 +1,8 @@
 body{
-    background-color: #101C26;
+    background-color: orange;
+}
+i{
+  color: white;
 }
 div {
     width: 1150px;

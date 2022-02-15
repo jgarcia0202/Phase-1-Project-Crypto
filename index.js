@@ -10,6 +10,13 @@ myBtn2.addEventListener("click", function(e){
   alert("You believe the market is bearish because: "+ reason+ ".");
 });
 
+function myFunction(x) {
+  x.classList.toggle("fa-thumbs-down");
+}
+const thumb = document.getElementById("thumb");
+thumb.addEventListener("click", function(e){
+  e.classList.toggle("fa-thumbs-down");
+})
 
 //Below is urls
 const cryptoUrl = 'https://api.coinlore.net/api/tickers/?start=0&limit=1';
@@ -52,3 +59,9 @@ async function getTime() {
 
 getCryto();
 getTime();
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("The DOM has loaded");
+  const name = prompt("Hello, what is your name? :");
+  document.body.innerHTML += "<p>Welcome fellow crypto investor " + name+ "!</p>";
+ // document.body.innerHTML += `Welcome fellow crypto investor ${prompt}!`;
+});
