@@ -1,14 +1,33 @@
 const myBtn = document.getElementById("myBtn");
-myBtn.addEventListener("click", function(e){
-  const reason = prompt("Why do you think so?");
-  alert("You believe the market is bullish because: "+ reason+ ".");
-});
-
 const myBtn2 = document.getElementById("myBtn2");
-myBtn2.addEventListener("click", function(e){
-  const reason = prompt("Why do you think so?");
-  alert("You believe the market is bearish because: "+ reason+ ".");
-});
+
+myBtn.addEventListener('click', function onClick() {
+  myBtn.style.backgroundColor = '#4F8C6F';
+  myBtn.style.color = 'white'
+  myBtn2.style.backgroundColor = 'white';
+  myBtn2.style.color = 'black'
+})
+myBtn2.addEventListener('click', function onClick() {
+  myBtn2.style.backgroundColor = '#A66946';
+  myBtn2.style.color = 'white'
+  myBtn.style.backgroundColor = 'white';
+  myBtn.style.color = 'black';
+
+})
+
+myBtn.addEventListener("mouseover", function( event ) {
+  event.target.style.color = "orange";
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 500);
+}, false);
+myBtn2.addEventListener("mouseover", function( event ) {
+  event.target.style.color = "orange";
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 500);
+}, false);
+
 
 function myFunction(x) {
   x.classList.toggle("fa-thumbs-down");
@@ -59,9 +78,3 @@ async function getTime() {
 
 getCryto();
 getTime();
-document.addEventListener("DOMContentLoaded", function() {
-  console.log("The DOM has loaded");
-  const name = prompt("Hello, what is your name? :");
-  document.body.innerHTML += "<p>Welcome fellow crypto investor " + name+ "!</p>";
- // document.body.innerHTML += `Welcome fellow crypto investor ${prompt}!`;
-});
