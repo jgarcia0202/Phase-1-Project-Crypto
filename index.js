@@ -11,26 +11,7 @@ const cryptoUrl = `https://api.coinlore.net/api/tickers/?`;
   })
 })
 
-function buildList(coin){
-  let p = document.createElement('p')
-  let btn = document.createElement('button')
-  btn.addEventListener('click', handleDelete)
-  btn.textContent = 'x'
-  p.textContent = `${coin} `
-  p.appendChild(btn)
-  console.log(p)
-  document.querySelector('#mainList').appendChild(p)
-}
-
-function handleDelete(e){
-  e.target.parentNode.remove()
-}
-function getCryto(val) {
-  console.log(val)
-  fetchCryto(val)
-}
 async function fetchCryto(e) {
-  console.log(e)
   const response = await fetch(cryptoUrl);
   const dat = await response.json();
   data = dat.data;
@@ -49,10 +30,16 @@ async function fetchCryto(e) {
   console.log(priceUSD)
   let p = document.createElement('p')
   let btn = document.createElement('button')
-  btn.addEventListener('click', handleDelete)
-  btn.textContent = 'x'
-  p.textContent = `Crypto information loading... ${called}... Rank: ${rank}; Symbol: ${symbol}; Percent Change: ${changeUSD}; Market Cap: ${capUSD}; Price: $${priceUSD} `
+  btn.addEventListener('click', deleteThis)
+  btn.textContent = 'X'
+  p.textContent = `- Crypto information loading... ${called}... Rank: ${rank}; Symbol: ${symbol}; Percent Change: ${changeUSD}; Market Cap: ${capUSD}; Price: $${priceUSD} `
   p.appendChild(btn)
-  console.log(p)
   document.querySelector('#mainList').appendChild(p)
+}
+
+function deleteThis(e){
+  e.target.parentNode.remove()
+}
+function getCryto(val) {
+  fetchCryto(val)
 }
