@@ -10,35 +10,24 @@
     <title>Crypto Finder</title>
   </head>
   <body>
-    <h1>WELCOME TO BITCOIN INFO WATCHER!<span>&#x1F4B8;</span></h1>
+    <h1>WELCOME TO THE CRYPTO INFO WATCHER!<span>&#x1F4B8;</span></h1>
 
-    <div id = box>
-     <h2>BITCOIN<br />(BTC):</h2>
-    
-     <p3>See How Bitcoin Is Doing In The Market!!!!</p3>
+    <p>Enter the rank of which crypto you want to see:</p>
+    <form class = "form" id = "myForm">
+      <label for ="number">From 1 to 100</label>
+      <input type = "text" name = "number" id = "number">
+      <button type = "submit">Search</button>
+    </form>
+    <br>
+<div id = 'mainList'>
+  <ul id = 'cryptoList'>
 
-     <p>
-      Day of the Week: <span id = 'day'></span><br />
-      Current Time(Eastern Time): <span id = 'time'></span>
-     </p>
-     <p2>
-      Price in USD: <span id = 'usd'></span><br />
-      Market Cap: <span id = 'chg'></span> <br />
-      Change %: <span id = 'cap'></span>
-     </p2>
-     
-     <footer>
-       <ul>
-        <p>How is the cryto market looking? 
-          <i id ="thumb" class="fa fa-thumbs-up"></i>
-        </p>
-        
-        <button id = "myBtn" type = "button">Bullish! <span >&#x21E7;</span></button>
-        <button id = "myBtn2" type = "button">Bearish!<span >&#x21E9;</span></button><br />
-        
-       </ul>
-       
-     </footer>
-    </div>
-    <script type="text/javascript" src="index.js"></script>  </body>
+  </ul>
+
+ <div id = 'box'>
+
+  
+ </div>
+</div>
+ <script type="text/javascript" src="index.js"></script>  </body>
 </html>
