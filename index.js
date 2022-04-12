@@ -6,28 +6,21 @@ const cryptoUrl = `https://api.coinlore.net/api/tickers/?`;
   let form = document.querySelector('form')
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    getCryto(e.target.number.value-1);
+    fetchCryto(e.target.number.value-1);
     form.reset()
   })
 })
 
-async function fetchCryto(e) {
+async function fetchCryto(rnk) {
   const response = await fetch(cryptoUrl);
   const dat = await response.json();
   data = dat.data;
-  console.log(data);
-  const rank = dat.data[e].rank;
-  console.log(rank)
-  const symbol = dat.data[e].symbol;
-  console.log(symbol)
-  const called = dat.data[e].name;
-  console.log(called)
-  const changeUSD = dat.data[e].percent_change_24h;
-  console.log(changeUSD)
-  const capUSD = dat.data[e].market_cap_usd;
-  console.log(capUSD)
-  const priceUSD = data[e].price_usd;
-  console.log(priceUSD)
+  const rank = dat.data[rnk].rank;
+  const symbol = dat.data[rnk].symbol;
+  const called = dat.data[rnk].name;
+  const changeUSD = dat.data[rnk].percent_change_24h;
+  const capUSD = dat.data[rnk].market_cap_usd;
+  const priceUSD = dat.data[rnk].price_usd;
   let p = document.createElement('p')
   let btn = document.createElement('button')
   btn.addEventListener('click', deleteThis)
@@ -40,6 +33,6 @@ async function fetchCryto(e) {
 function deleteThis(e){
   e.target.parentNode.remove()
 }
-function getCryto(val) {
-  fetchCryto(val)
-}
+//function getCryto(val) {
+//  fetchCryto(val)
+//}
