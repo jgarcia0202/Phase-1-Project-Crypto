@@ -33,6 +33,3 @@ async function fetchCryto(rnk) {
 function deleteThis(e){
   e.target.parentNode.remove()
 }
-//function getCryto(val) {
-//  fetchCryto(val)
-//}
