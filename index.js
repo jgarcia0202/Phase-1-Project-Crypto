@@ -33,3 +33,40 @@ async function fetchCryto(rnk) {
 function deleteThis(e){
   e.target.parentNode.remove()
 }
+
+const animals = [{
+  isPet: true,
+  type: "dog",
+  name: "Olive",
+}, 
+{
+  isPet: false,
+  type: "lion",
+  name: "Nala",
+},
+{
+  isPet: false,
+  type: "bear",
+  name: "Honey",
+},
+{
+  isPet: true,
+  type: "cat",
+  name: "Maru"
+},{
+  isPet: true,
+  type: "fish",
+  name: "Dr. Fishy"
+}]
+// get true animals, append type to buttons, when pressed console.log name
+animals.forEach(Element =>{
+  if (isPet = true){
+    let button = document.createElement('button')
+    let p = document.createElement('p')
+    button.textContent = animals.type;
+    p.appendChild(button);
+    button.addEventListener('click', (e) => {
+      console.log(name)
+    })
+  }
+})
