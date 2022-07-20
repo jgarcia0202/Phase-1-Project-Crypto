@@ -9,11 +9,7 @@ let start = 0
 
 document.addEventListener('DOMContentLoaded',() => {
     fetchCrypto()
-  //form.addEventListener('submit', (e) => {
-   // e.preventDefault();
-    //fetchCryto(e.target.number.value-1);
-    //form.reset()
-  //})
+
 })
 
 const fetchCrypto = () =>{
@@ -49,21 +45,27 @@ const fetchCrypto = () =>{
       .then(response => response.json())
       .then(dat => dat.data)
       .then(cryptos => cryptos.forEach(crypto => addToList(crypto)))
-  })})}
+  })
+  fillContent(cryptos[0])
+})}
 function addToList(crypto){
   //console.log(crypto)
   let card = document.createElement('ul')
+  card.className = 'variable'
+  card.innerHTML = ` ${crypto.symbol}`
+  mainList.appendChild(card)
+  card.addEventListener('click', e => {
+    fillContent(crypto)
+  })
+}
+const fillContent = (crypto) => {
+  console.log(crypto)
   let form = document.createElement('form')
   form.innerHTML = `
   <label> Enter Your Comments:</label><br>
   <input type = 'text' id = 'comment' placeholder = 'Comment' value = ''>
   <input type="submit" value="Submit">
   `
-  card.className = 'variable'
-  card.innerHTML = ` ${crypto.symbol}`
-  mainList.appendChild(card)
-  card.addEventListener('click', e => {
-    console.log(crypto)
     content.innerHTML = ''
     let card = document.createElement('ul')
     card.innerHTML = `
@@ -82,34 +84,10 @@ function addToList(crypto){
       comment.innerHTML = `<h4> ${(form.querySelector('#comment').value)} </h4>`
       card.appendChild(comment)
       form.querySelector('#comment').value = ''
-
     })
-  })
 }
 
-/*
-async function fetchCryto(rnk) {
-  const response = await fetch(cryptoUrl);
-  const dat = await response.json();
-  debugger 
-  const data = dat.data;
-  const rank = dat.data[rnk].rank;
-  const symbol = dat.data[rnk].symbol;
-  const called = dat.data[rnk].name;
-  const changeUSD = dat.data[rnk].percent_change_24h;
-  const capUSD = dat.data[rnk].market_cap_usd;
-  const priceUSD = dat.data[rnk].price_usd;
-  let p = document.createElement('p')
-  let btn = document.createElement('button')
-  btn.addEventListener('click', deleteThis)
-  btn.textContent = 'X'
-  p.textContent = `- Crypto information loading... ${called}... Rank: ${rank}; Symbol: ${symbol}; Percent Change: ${changeUSD}; Market Cap: ${capUSD}; Price: $${priceUSD} `
-  p.appendChild(btn)
-  document.querySelector('#mainList').appendChild(p)
-}
-function deleteThis(e){
-  e.target.parentNode.remove()
-}*/
+
 
 
 
