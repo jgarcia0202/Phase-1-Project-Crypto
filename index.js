@@ -110,19 +110,20 @@ const fillContent = (crypto) => {
     `
     content.appendChild(card)
     content.appendChild(form)
+    document.querySelector('#delBut').disabled = true
+    document.querySelector('#delBut').style.opacity = "0"
     form.addEventListener('submit', e => {
       e.preventDefault()
-      //let deleteBtn = document.createElement('button')
-      //deleteBtn.innerText = ' X '
+      document.querySelector('#delBut').disabled = false
+      document.querySelector('#delBut').style.opacity = "1"
       let comment = document.createElement('ul')
       comment.innerHTML = `<h4> - ${(form.querySelector('#comment').value)} </h4>`
       card.appendChild(comment)
-      //comment.appendChild(deleteBtn)
       document.querySelector('#delBut').addEventListener('click', e =>{
-        console.log('hi')
-        card.removeChild(comment)
+          card.removeChild(comment)
+          document.querySelector('#delBut').style.opacity = "0"
       })
-      form.querySelector('#comment').value = ''
+        form.querySelector('#comment').value = ''
       
     })
 }
