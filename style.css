@@ -95,3 +95,6 @@ h5{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 20;
 }
+button {
+    float: inherit;
+}

@@ -7,6 +7,7 @@ const content = document.querySelector('#content')
 const buttons = document.querySelector('#buttons')
 let start = 0
 let count = document.querySelector('#count')
+const comments = document.querySelector('#comments')
 
 document.addEventListener('DOMContentLoaded',() => {
     fetchCrypto()
@@ -105,15 +106,24 @@ const fillContent = (crypto) => {
       Rank in Cryptocurrency: [${crypto.rank}], Supply of Coin: [${crypto.tsupply}]
     </p>
     <p>Comments:                                </p>
+    <button id = 'delBut' class = 'butt2'> -- Delete All Comments -- </button> 
     `
     content.appendChild(card)
     content.appendChild(form)
     form.addEventListener('submit', e => {
       e.preventDefault()
-      let comment = document.createElement('li')
-      comment.innerHTML = `<h4> ${(form.querySelector('#comment').value)} </h4>`
+      //let deleteBtn = document.createElement('button')
+      //deleteBtn.innerText = ' X '
+      let comment = document.createElement('ul')
+      comment.innerHTML = `<h4> - ${(form.querySelector('#comment').value)} </h4>`
       card.appendChild(comment)
+      //comment.appendChild(deleteBtn)
+      document.querySelector('#delBut').addEventListener('click', e =>{
+        console.log('hi')
+        card.removeChild(comment)
+      })
       form.querySelector('#comment').value = ''
+      
     })
 }
 
