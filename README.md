@@ -1,4 +1,4 @@
-# Crypto-Information-Grabber
+# Crypto-Information-Finder
 
 Description:
  Features
