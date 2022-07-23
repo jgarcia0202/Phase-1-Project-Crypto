@@ -13,11 +13,10 @@ document.addEventListener('DOMContentLoaded',() => {
     fetchCrypto()
 })
 
-const fetchCrypto = () =>{
-  fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
-  .then(response => response.json())
-  .then(dat => dat.data)
-  .then(cryptos => {
+async function fetchCrypto(){
+  let response = await fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
+  let dat = await response.json()
+  let cryptos = await dat.data
     count.innerText = ` Displaying Cryptocurrencies Rank ${start} to ${start + 10}`
     cryptos.forEach(crypto => addToList(crypto))
     let nextFityButton = document.createElement('button')
@@ -36,48 +35,48 @@ const fetchCrypto = () =>{
     buttons.appendChild(backButton)
     buttons.appendChild(nextFityButton)
     buttons.appendChild(nextButton)
-     nextButton.addEventListener('click', e => {
+     nextButton.addEventListener('click', async e => {
       mainList.innerHTML = ' '
       start +=10
-      fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
-      .then(response => response.json())
-      .then(dat => dat.data)
-      .then(cryptos => cryptos.forEach(crypto => addToList(crypto)))
+      let response = await fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
+      let dat = await response.json()
+      let cryptos = await dat.data
+      cryptos.forEach(crypto => addToList(crypto))
   })
-  nextFityButton.addEventListener('click', e => {
+  nextFityButton.addEventListener('click', async e => {
     mainList.innerHTML = ' '
     start +=50
-    fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
-    .then(response => response.json())
-    .then(dat => dat.data)
-    .then(cryptos => cryptos.forEach(crypto => addToList(crypto)))
+    let response = await fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
+    let dat = await response.json()
+    let cryptos = await dat.data
+    cryptos.forEach(crypto => addToList(crypto))
 })
-  backButton.addEventListener('click', e => {
+  backButton.addEventListener('click', async e => {
       if (start == 0){
           alert('Cannot Go Back')
           return
       }
       mainList.innerHTML = ' '
       start -=10
-      fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
-      .then(response => response.json())
-      .then(dat => dat.data)
-      .then(cryptos => cryptos.forEach(crypto => addToList(crypto)))
+      let response = await fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
+      let dat = await response.json()
+      let cryptos = await dat.data
+      cryptos.forEach(crypto => addToList(crypto))
   })
-  backFityButton.addEventListener('click', e => {
+  backFityButton.addEventListener('click', async e => {
     if (start <= 49){
         alert('Cannot Go Back')
         return
     }
     mainList.innerHTML = ' '
     start -=50
-    fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
-    .then(response => response.json())
-    .then(dat => dat.data)
-    .then(cryptos => cryptos.forEach(crypto => addToList(crypto)))
+    let response = await fetch(`https://api.coinlore.net/api/tickers/?start=${start}&limit=10`)
+    let dat = await response.json()
+    let cryptos = await dat.data
+    cryptos.forEach(crypto => addToList(crypto))
 })
   fillContent(cryptos[0])
-})}
+}
 function addToList(crypto){
   //console.log(crypto)
   count.innerText = ` Displaying Cryptocurrencies Rank ${start} to ${start + 10}`
